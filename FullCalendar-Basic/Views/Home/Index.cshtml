@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EventsModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <!-- FullCalendar Local CSS -->
+    <link href="~/lib/fullcalendar/lib/main.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="~/lib/fullcalendar/lib/main.js"></script>
+
+    <!--FullCalendar Local JS-->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                themeSystem: 'bootstrap',
+                headerToolbar: {
+                    start: 'prev next',
+                    center: 'title',
+                    end: 'dayGridWeek dayGridMonth'
+                },
+                buttonIcons: {
+                    prev: 'fa-chevron-left',
+                    next: 'fa-chevron-right'
+                },
+                eventSources: [{
+                    url: '/Home/FindEvents',
+                    textColor: 'black',
+                    display: 'auto'
+                }]
+            });
+
+            calendar.render();
+        });
+    </script>
+
+</head>
+
+<div class="calendar-wrapper">
+    <div class="container">
+        <div class="jumbo jumbotron" style="width:auto">
+            <div class="main" id="calendar">
+            </div>
+        </div>
+    </div>
+</div>
+
