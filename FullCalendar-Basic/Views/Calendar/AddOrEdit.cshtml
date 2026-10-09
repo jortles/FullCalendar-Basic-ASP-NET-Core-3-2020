@@ -13,36 +13,29 @@
                     <input type="hidden" asp-for="EventID" />
                     <div class="mb-3">
                         <input type="text"
-                               name="Subject"
-                               id="Subject"
+                               asp-for="Subject"
                                placeholder="Subject " />
                         <label for="Subject">Subject</label>
                     </div>
                     <div class="mb-3">
                         <input type="text"
-                               name="Description"
-                               id="Description"
+                               asp-for="Description"
                                placeholder="Description" />
                         <label for="Description">Description</label>
                     </div>
                     <div class="mb-3">
-                        <input type="datetime"
-                               name="Start"
-                               id="Start"
+                        <input asp-for="Start"
                                placeholder="Start" />
                         <label for="Start">Start</label>
                     </div>
                     <div class="mb-3">
-                        <input type="datetime"
-                               name="End"
-                               id="End"
+                        <input asp-for="End"
                                placeholder="End" />
                         <label for="End">End</label>
                     </div>
                     <div class="mb-3">
                         <input type="text"
-                               name="ThemeColor"
-                               id="ThemeColor"
+                               asp-for="ThemeColor"
                                placeholder="ThemeColor" />
                         <label for="ThemeColor">ThemeColor</label>
                     </div>

@@ -39,10 +39,10 @@ jQueryAjaxPost = form => {
             processData: false,
             success: function (res) {
                 if (res.isValid) {
-                    $("#view-all").html(res.html);
                     $("#events-modal .modal-body").html('');
                     $("#events-modal .modal-title").html('');
                     $("#events-modal").modal('hide');
+                    $("#view-all").html(res.html);
                     $.notify('submitted successfully', { globalPosition: 'top center', className: 'success' });
                 }
                 else
